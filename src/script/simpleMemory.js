@@ -3,7 +3,7 @@
  * https://www.cnblogs.com/bndong/
  * @author: BNDong, dbnuo@foxmail.com
  **/
-debugger
+debugger;
 if (initCheck()) {
 
     var sidebarHtml =
