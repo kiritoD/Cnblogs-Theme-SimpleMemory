@@ -3,6 +3,7 @@
  * https://www.cnblogs.com/bndong/
  * @author: BNDong, dbnuo@foxmail.com
  **/
+debugger
 if (initCheck()) {
 
     var sidebarHtml =
@@ -86,7 +87,7 @@ if (initCheck()) {
         '        <i class="scroll-down-icon iconfont icon-fanhui"></i>' +
         '    </a>' +
         '</div>' +
-        '<div id="loading"></div>'  +
+        '<div id="loading"></div>' +
         '<div id="bottomProgressBar"></div>' +
         '<div id="rightMenu"></div>';
 
@@ -198,7 +199,7 @@ if (initCheck()) {
         bottomBlogroll: [],
         bottomText: {
             iconFont: {
-                icon:  "icon-xl",
+                icon: "icon-xl",
                 color: "red",
                 fontSize: "16px"
             },
@@ -226,7 +227,7 @@ if (initCheck()) {
         advertising: true,
     };
 
-    window.cnblogsConfig = $.extend( true, window.cnblogsConfigDefault, window.cnblogsConfig );
+    window.cnblogsConfig = $.extend(true, window.cnblogsConfigDefault, window.cnblogsConfig);
     getVersionConfig();
 
 } else {
@@ -243,7 +244,7 @@ function initCheck() {
     var baseStyle = $('#mobile-style').attr('href');
     if (typeof baseStyle != 'undefined') {
         var bt = baseStyle.split('/');
-        if($.inArray('SimpleMemory', bt) !== -1) {
+        if ($.inArray('SimpleMemory', bt) !== -1) {
             return true;
         }
     }
@@ -263,14 +264,13 @@ function getVersionConfig() {
             url: url,
             dataType: "text",
             async: false,
-            success: function(conf)
-            {
+            success: function (conf) {
                 window.themeVersion = conf ? JSON.parse(conf) : false;
                 window.themeVersion && setConfVersion();
             }
         });
 
-    } else if(window.cnblogsConfig.GhUserName === 'BNDong') {
+    } else if (window.cnblogsConfig.GhUserName === 'BNDong') {
         window.themeVersion = [
             [
                 "v1.1.6",
@@ -336,18 +336,18 @@ function getVersionConfig() {
 function init() {
 
     // set sidebar html
-    var url = window.location.href,tmp = [];
+    var url = window.location.href, tmp = [];
     tmp = url.split("/");
     var user = tmp[3];
-    var navListHtml = '<li><a href="https://www.cnblogs.com/'+user+'/" target="_self">首页</a></li>' +
-        '<li><a href="https://msg.cnblogs.com/send/'+user+'" target="_blank">联系</a></li>' +
-        '<li><a href="https://www.cnblogs.com/'+user+'/rss" target="_blank">订阅</a></li>' +
+    var navListHtml = '<li><a href="https://www.cnblogs.com/' + user + '/" target="_self">首页</a></li>' +
+        '<li><a href="https://msg.cnblogs.com/send/' + user + '" target="_blank">联系</a></li>' +
+        '<li><a href="https://www.cnblogs.com/' + user + '/rss" target="_blank">订阅</a></li>' +
         '<li><a href="https://i.cnblogs.com/" target="_blank">管理</a></li>';
 
     var menuNavList = window.cnblogsConfig.menuNavList;
     if (menuNavList.length > 0) {
         $.each(menuNavList, function (i) {
-            navListHtml += '<li><a href="'+(menuNavList[i][1])+'" target="_blank">'+(menuNavList[i][0])+'</a></li>';
+            navListHtml += '<li><a href="' + (menuNavList[i][1]) + '" target="_blank">' + (menuNavList[i][0]) + '</a></li>';
         });
     }
 
@@ -358,7 +358,7 @@ function init() {
     if (window.cnblogsConfig.blogUser === "") window.cnblogsConfig.blogUser = user;
 
     // start cache
-    $.ajaxSetup({cache: true});
+    $.ajaxSetup({ cache: true });
 
     // load loadingJs
     $.getScript(getJsDelivrUrl('loading.js'), function () {
@@ -375,8 +375,8 @@ function init() {
                         // 'optiscroll', 'ToProgress', 'rotate',
                         'optiscroll_ToProgress_rotate',
                         'snapSvg', 'classie', 'main4', 'tools'];
-                    require(staticResource, function() {
-                        require(['base'], function() {
+                    require(staticResource, function () {
+                        require(['base'], function () {
                             (new Base).init();
                         });
                     });
@@ -389,24 +389,24 @@ function init() {
 // get file url
 function getJsDelivrUrl(file, directory) {
     file = setFileNameMin(file, directory);
-    return 'https://cdn.jsdelivr.net/gh/'+(window.cnblogsConfig.GhUserName)+'/'+(window.cnblogsConfig.GhRepositories)+'@'+(window.cnblogsConfig.GhVersions)+'/' + (file ? file : '');
+    return 'https://cdn.jsdelivr.net/gh/' + (window.cnblogsConfig.GhUserName) + '/' + (window.cnblogsConfig.GhRepositories) + '@' + (window.cnblogsConfig.GhVersions) + '/' + (file ? file : '');
 }
 
 // optimization file name
 function setFileNameMin(file, directory) {
     if (typeof file == 'undefined') return '';
-    var suffix  = null,fileArr = file.split('.');
-    if (fileArr.length > 0 && $.inArray(fileArr[(fileArr.length -1)], ['js', 'css']) !== -1) {
+    var suffix = null, fileArr = file.split('.');
+    if (fileArr.length > 0 && $.inArray(fileArr[(fileArr.length - 1)], ['js', 'css']) !== -1) {
         suffix = fileArr.pop();
         switch (suffix) {
-            case 'js':directory = 'script';break;
-            case 'css':directory = 'style';break;
+            case 'js': directory = 'script'; break;
+            case 'css': directory = 'style'; break;
         }
     } else {
         if (typeof directory == 'undefined') return '';
         switch (directory) {
-            case 'js':directory = 'script';break;
-            case 'css':directory = 'style';break;
+            case 'js': directory = 'script'; break;
+            case 'css': directory = 'style'; break;
         }
     }
     file.search('.min') === -1 && fileArr.push('min');
