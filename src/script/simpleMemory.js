@@ -339,7 +339,7 @@ function init() {
     var url = window.location.href, tmp = [];
     tmp = url.split("/");
     var user = tmp[3];
-    debugger;
+    console.log('here')
     var navListHtml = '<li><a href="https://www.cnblogs.com/' + user + '/" target="_self">首页</a></li>' +
         '<li><a href="https://msg.cnblogs.com/send/' + user + '" target="_blank">联系</a></li>' +
         '<li><a href="https://www.cnblogs.com/' + user + '/rss" target="_blank">订阅</a></li>' +
