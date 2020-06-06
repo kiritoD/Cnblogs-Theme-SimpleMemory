@@ -239,6 +239,7 @@ if (initCheck()) {
 
 // init check
 function initCheck() {
+    console.log('1234');
     debugger;
     // check base theme
     var baseStyle = $('#mobile-style').attr('href');
