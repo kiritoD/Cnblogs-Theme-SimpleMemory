@@ -239,9 +239,10 @@ if (initCheck()) {
 
 // init check
 function initCheck() {
-
+    debugger;
     // check base theme
     var baseStyle = $('#mobile-style').attr('href');
+    console.log(baseStyle);
     if (typeof baseStyle != 'undefined') {
         var bt = baseStyle.split('/');
         if ($.inArray('SimpleMemory', bt) !== -1) {
