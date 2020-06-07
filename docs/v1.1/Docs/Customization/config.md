@@ -71,6 +71,37 @@ window.cnblogsConfig = {
     GhRepositories: 'Cnblogs-Theme-SimpleMemory',
 }
 ```
+### *IsUsePersionalGh - 切换到个人仓库方便个性化定制*
+
+* 类型: ```Bool```
+* 默认值: ```False```
+  
+```javascript
+window.cnblogsConfig = {
+    IsUsePersonalGh:False,
+}
+```
+
+### *GhBranch - 调用个人仓库里不同分支*
+
+* 类型: ```String```
+* 默认值: ```theme_kiritoD```
+  
+```javascript
+window.cnblogsConfig = {
+    GhBranch:'theme_kiritoD',
+}
+```
+### *GhOwnUserName - 个人用户名*
+
+* 类型: ```String```
+* 默认值: ```kiritoD```
+  
+```javascript
+window.cnblogsConfig = {
+    GhOwnUserName:'kiritoD',
+}
+```
 
 ### GhVersions - 主题版本
 
