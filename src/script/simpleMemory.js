@@ -395,20 +395,20 @@ function getJsDelivrUrl(file, directory) {
     //kiritoD_start:change the js location if the IsUsePersonalGh is True.
     url = window.cnblogsConfig.IsUsePersonalGh ?
         'https://cdn.jsdelivr.net/gh/' +
-        (window.cnblogsConfig.GhUserName) + '/' +
-        (window.cnblogsConfig.GhRepositories) + '@' +
-        (window.cnblogsConfig.GhVersions) + '/' + (file ? file : '') :
-        'https://cdn.jsdelivr.net/gh/' +
         (window.cnblogsConfig.GhOwnUserName) + '/' +
         (window.cnblogsConfig.GhRepositories) + '@' +
-        (window.cnblogsConfig.Ghbranch) + '/' + (file ? file : '');
+        (window.cnblogsConfig.Ghbranch) + '/' + (file ? file : '') :
+        'https://cdn.jsdelivr.net/gh/' +
+        (window.cnblogsConfig.GhUserName) + '/' +
+        (window.cnblogsConfig.GhRepositories) + '@' +
+        (window.cnblogsConfig.GhVersions) + '/' + (file ? file : '');
     return url
     //kirito_end
     //initial code
     // return 'https://cdn.jsdelivr.net/gh/' +
-    //     (window.cnblogsConfig.GhOwnUserName) + '/' +
+    //     (window.cnblogsConfig.GhUserName) + '/' +
     //     (window.cnblogsConfig.GhRepositories) + '@' +
-    //     (window.cnblogsConfig.Ghbranch) + '/' + (file ? file : '');
+    //     (window.cnblogsConfig.GhVersions) + '/' + (file ? file : '');
 }
 
 // optimization file name
