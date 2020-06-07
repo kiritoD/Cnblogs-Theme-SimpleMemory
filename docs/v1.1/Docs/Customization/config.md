@@ -74,7 +74,7 @@ window.cnblogsConfig = {
 ### *IsUsePersionalGh - 切换到个人仓库方便个性化定制*
 
 * 类型: ```Bool```
-* 默认值: ```False```
+* 默认值: ```false```
   
 ```javascript
 window.cnblogsConfig = {

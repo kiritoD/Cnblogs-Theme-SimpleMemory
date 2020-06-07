@@ -92,7 +92,7 @@ if (initCheck()) {
         '<div id="rightMenu"></div>';
 
     window.cnblogsConfigDefault = {
-        IsUsePersonalGh:False,
+        IsUsePersonalGh:true,
         GhBranch:'theme_kiritoD',
         GhOwnUserName:'kiritoD',
         GhUserName: 'BNDong',
