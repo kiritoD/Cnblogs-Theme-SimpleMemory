@@ -92,6 +92,9 @@ if (initCheck()) {
         '<div id="rightMenu"></div>';
 
     window.cnblogsConfigDefault = {
+        IsUsePersonalGh:False,
+        GhBranch:'theme_kiritoD',
+        GhOwnUserName:'kiritoD',
         GhUserName: 'BNDong',
         GhRepositories: 'Cnblogs-Theme-SimpleMemory',
         GhVersions: 'v1.3.0',
@@ -239,8 +242,6 @@ if (initCheck()) {
 
 // init check
 function initCheck() {
-    console.log('1234');
-    debugger;
     // check base theme
     var baseStyle = $('#mobile-style').attr('href');
     console.log(baseStyle);
@@ -391,7 +392,23 @@ function init() {
 // get file url
 function getJsDelivrUrl(file, directory) {
     file = setFileNameMin(file, directory);
-    return 'https://cdn.jsdelivr.net/gh/' + (window.cnblogsConfig.GhUserName) + '/' + (window.cnblogsConfig.GhRepositories) + '@' + (window.cnblogsConfig.GhVersions) + '/' + (file ? file : '');
+    //kiritoD_start:change the js location if the IsUsePersonalGh is True.
+    url = window.cnblogsConfig.IsUsePersonalGh ?
+        'https://cdn.jsdelivr.net/gh/' +
+        (window.cnblogsConfig.GhUserName) + '/' +
+        (window.cnblogsConfig.GhRepositories) + '@' +
+        (window.cnblogsConfig.GhVersions) + '/' + (file ? file : '') :
+        'https://cdn.jsdelivr.net/gh/' +
+        (window.cnblogsConfig.GhOwnUserName) + '/' +
+        (window.cnblogsConfig.GhRepositories) + '@' +
+        (window.cnblogsConfig.Ghbranch) + '/' + (file ? file : '');
+    return url
+    //kirito_end
+    //initial code
+    // return 'https://cdn.jsdelivr.net/gh/' +
+    //     (window.cnblogsConfig.GhOwnUserName) + '/' +
+    //     (window.cnblogsConfig.GhRepositories) + '@' +
+    //     (window.cnblogsConfig.Ghbranch) + '/' + (file ? file : '');
 }
 
 // optimization file name
