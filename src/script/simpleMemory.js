@@ -393,6 +393,7 @@ function init() {
 function getJsDelivrUrl(file, directory) {
     file = setFileNameMin(file, directory);
     //kiritoD_start:change the js location if the IsUsePersonalGh is True.
+    var x = 1;
     url = window.cnblogsConfig.IsUsePersonalGh ?
         'https://cdn.jsdelivr.net/gh/' +
         (window.cnblogsConfig.GhOwnUserName) + '/' +
